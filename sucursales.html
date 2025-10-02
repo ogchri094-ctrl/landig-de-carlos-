@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sucursales - Hiperllantas La Ola</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --color-principal: #d32f2f;
+      --color-secundario: #b71c1c;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--color-principal), var(--color-secundario));
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin-top: .5rem;
+      font-size: 1.1rem;
+    }
+
+    .hora {
+      font-weight: bold;
+      margin-top: 1rem;
+      background: rgba(255,255,255,0.2);
+      display: inline-block;
+      padding: .5rem 1rem;
+      border-radius: 10px;
+    }
+
+    section {
+      padding: 3rem 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--color-principal);
+      margin-bottom: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .info {
+      padding: 1.5rem;
+    }
+
+    .info h3 {
+      margin: 0;
+      color: var(--color-principal);
+    }
+
+    .info p {
+      margin: .5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .estado {
+      margin-top: 1rem;
+      font-weight: bold;
+      padding: .5rem;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    .abierto {
+      background: #c8e6c9;
+      color: #2e7d32;
+    }
+
+    .cerrado {
+      background: #ffcdd2;
+      color: #b71c1c;
+    }
+
+    /* Botón WhatsApp */
+    .btn-servicio {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: #25D366;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-servicio i {
+      margin-right: 0.5rem;
+    }
+
+    .btn-servicio:hover {
+      background: #1ebe57;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* Mapa */
+    .mapa {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .mapa iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 15px;
+    }
+
+    @media(max-width: 768px) {
+      header h1 { font-size: 1.6rem; }
+      .mapa iframe { height: 250px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Nuestras Sucursales</h1>
+    <p>Encuentra la sucursal más cercana de <strong>Hiperllantas La Ola</strong></p>
+    <div class="hora" id="horaActual"></div>
+  </header>
+
+  <!-- Sucursales Norte -->
+  <section>
+    <h2>Sucursales Norte</h2>
+    <div class="grid">
+
+      <div class="card" data-apertura="9" data-cierre="19">
+        <img src="https://images.unsplash.com/photo-1586201375761-83865001e17d" alt="Ticomán">
+        <div class="info">
+          <h3>Ticomán</h3>
+          <p><i class="fa-solid fa-location-dot"></i> Av. Ticomán #123, CDMX</p>
+          <p><i class="fa-solid fa-phone"></i> 55 1234 5678</p>
+          <p><i class="fa-solid fa-clock"></i> Lunes a Sábado: 9:00 - 19:00</p>
+          <span class="estado"></span>
+          <a href="https://wa.me/5215512345678?text=Hola,%20quiero%20agendar%20un%20servicio%20en%20la%20sucursal%20Ticomán" target="_blank" class="btn-servicio">
+            <i class="fa-brands fa-whatsapp"></i> Agendar Servicio
+          </a>
+        </div>
+      </div>
+
+      <div class="card" data-apertura="9" data-cierre="19">
+        <img src="https://images.unsplash.com/photo-1605537909416-73f8a9a7f760" alt="Misterios">
+        <div class="info">
+          <h3>Misterios</h3>
+          <p><i class="fa-solid fa-location-dot"></i> Calle Misterios #456, CDMX</p>
+          <p><i class="fa-solid fa-phone"></i> 55 2345 6789</p>
+          <p><i class="fa-solid fa-clock"></i> Lunes a Sábado: 9:00 - 19:00</p>
+          <span class="estado"></span>
+          <a href="https://wa.me/5215523456789?text=Hola,%20quiero%20agendar%20un%20servicio%20en%20la%20sucursal%20Misterios" target="_blank" class="btn-servicio">
+            <i class="fa-brands fa-whatsapp"></i> Agendar Servicio
+          </a>
+        </div>
+      </div>
+
+      <div class="card" data-apertura="9" data-cierre="18">
+        <img src="https://images.unsplash.com/photo-1603189829975-d431a57a23dd" alt="Cuitlahuac">
+        <div class="info">
+          <h3>Cuitlahuac</h3>
+          <p><i class="fa-solid fa-location-dot"></i> Av. Cuitlahuac #789, CDMX</p>
+          <p><i class="fa-solid fa-phone"></i> 55 3456 7890</p>
+          <p><i class="fa-solid fa-clock"></i> Lunes a Sábado: 9:00 - 18:00</p>
+          <span class="estado"></span>
+          <a href="https://wa.me/5215534567890?text=Hola,%20quiero%20agendar%20un%20servicio%20en%20la%20sucursal%20Cuitlahuac" target="_blank" class="btn-servicio">
+            <i class="fa-brands fa-whatsapp"></i> Agendar Servicio
+          </a>
+        </div>
+      </div>
+
+      <div class="card" data-apertura="10" data-cierre="17">
+        <img src="https://images.unsplash.com/photo-1603741399232-69fc1a2a3e0f" alt="Viveros">
+        <div class="info">
+          <h3>Viveros</h3>
+          <p><i class="fa-solid fa-location-dot"></i> Av. Viveros #321, CDMX</p>
+          <p><i class="fa-solid fa-phone"></i> 55 4567 8901</p>
+          <p><i class="fa-solid fa-clock"></i> Lunes a Sábado: 10:00 - 17:00</p>
+          <span class="estado"></span>
+          <a href="https://wa.me/5215545678901?text=Hola,%20quiero%20agendar%20un%20servicio%20en%20la%20sucursal%20Viveros" target="_blank" class="btn-servicio">
+            <i class="fa-brands fa-whatsapp"></i> Agendar Servicio
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sucursales Sur -->
+  <section>
+    <h2>Sucursales Sur</h2>
+    <div class="grid">
+
+      <div class="card" data-apertura="9" data-cierre="19">
+        <img src="https://images.unsplash.com/photo-1605537909416-73f8a9a7f760" alt="Bombas">
+        <div class="info">
+          <h3>Bombas</h3>
+          <p><i class="fa-solid fa-location-dot"></i> Calle Bombas #123, CDMX</p>
+          <p><i class="fa-solid fa-phone"></i> 55 5678 9012</p>
+          <p><i class="fa-solid fa-clock"></i> Lunes a Sábado: 9:00 - 19:00</p>
+          <span class="estado"></span>
+          <a href="https://wa.me/5215556789012?text=Hola,%20quiero%20agendar%20un%20servicio%20en%20la%20sucursal%20Bombas" target="_blank" class="btn-servicio">
+            <i class="fa-brands fa-whatsapp"></i> Agendar Servicio
+          </a>
+        </div>
+      </div>
+
+      <div class="card" data-apertura="9" data-cierre="19">
+        <img src="https://images.unsplash.com/photo-1603189829975-d431a57a23dd" alt="División">
+        <div class="info">
+          <h3>División</h3>
+          <p><i class="fa-solid fa-location-dot"></i> Av. División #456, CDMX</p>
+          <p><i class="fa-solid fa-phone"></i> 55 6789 0123</p>
+          <p><i class="fa-solid fa-clock"></i> Lunes a Sábado: 9:00 - 19:00</p>
+          <span class="estado"></span>
+          <a href="https://wa.me/5215567890123?text=Hola,%20quiero%20agendar%20un%20servicio%20en%20la%20sucursal%20División" target="_blank" class="btn-servicio">
+            <i class="fa-brands fa-whatsapp"></i> Agendar Servicio
+          </a>
+        </div>
+      </div>
+
+      <div class="card" data-apertura="10" data-cierre="18">
+        <img src="https://images.unsplash.com/photo-1603741399232-69fc1a2a3e0f" alt="San Lorenzo">
+        <div class="info">
+          <h3>San Lorenzo</h3>
+          <p><i class="fa-solid fa-location-dot"></i> Calle San Lorenzo #789, CDMX</p>
+          <p><i class="fa-solid fa-phone"></i> 55 7890 1234</p>
+          <p><i class="fa-solid fa-clock"></i> Lunes a Sábado: 10:00 - 18:00</p>
+          <span class="estado"></span>
+          <a href="https://wa.me/5215578901234?text=Hola,%20quiero%20agendar%20un%20servicio%20en%20la%20sucursal%20San%20Lorenzo" target="_blank" class="btn-servicio">
+            <i class="fa-brands fa-whatsapp"></i> Agendar Servicio
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Mapas por Sucursal -->
+  <section>
+    <h2>Mapa de Ubicaciones</h2>
+    <div class="grid">
+      <div class="mapa">
+        <h3>Ticomán</h3>
+        <iframe src="https://www.google.com/maps?q=Ticoman,+CDMX&output=embed" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div class="mapa">
+        <h3>Misterios</h3>
+        <iframe src="https://www.google.com/maps?q=Misterios,+CDMX&output=embed" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div class="mapa">
+        <h3>Cuitlahuac</h3>
+        <iframe src="https://www.google.com/maps?q=Cuitlahuac,+CDMX&output=embed" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div class="mapa">
+        <h3>Viveros</h3>
+        <iframe src="https://www.google.com/maps?q=Viveros,+CDMX&output=embed" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div class="mapa">
+        <h3>Bombas</h3>
+        <iframe src="https://www.google.com/maps?q=Bombas,+CDMX&output=embed" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div class="mapa">
+        <h3>División</h3>
+        <iframe src="https://www.google.com/maps?q=División,+CDMX&output=embed" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div class="mapa">
+        <h3>San Lorenzo</h3>
+        <iframe src="https://www.google.com/maps?q=San+Lorenzo,+CDMX&output=embed" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Mostrar hora actual
+    function actualizarHora() {
+      const ahora = new Date();
+      const hora = ahora.getHours().toString().padStart(2,"0");
+      const minutos = ahora.getMinutes().toString().padStart(2,"0");
+      const segundos = ahora.getSeconds().toString().padStart(2,"0");
+      document.getElementById("horaActual").textContent = `Hora actual: ${hora}:${minutos}:${segundos}`;
+    }
+    setInterval(actualizarHora, 1000);
+    actualizarHora();
+
+    // Mostrar estado de sucursales
+    function actualizarSucursales() {
+      const ahora = new Date();
+      const horaActual = ahora.getHours();
+
+      document.querySelectorAll(".card").forEach(card => {
+        const apertura = parseInt(card.dataset.apertura);
+        const cierre = parseInt(card.dataset.cierre);
+        const estado = card.querySelector(".estado");
+
+        if (horaActual >= apertura && horaActual < cierre) {
+          estado.textContent = "Abierto Ahora";
+          estado.className = "estado abierto";
+        } else {
+          estado.textContent = "Cerrado";
+          estado.className = "estado cerrado";
+        }
+      });
+    }
+
+    setInterval(actualizarSucursales, 60000);
+    actualizarSucursales();
+  </script>
+
+</body>
+</html>

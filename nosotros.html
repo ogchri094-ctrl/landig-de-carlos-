@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros - Hiperllantas La Ola</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --color-principal: #d32f2f;
+      --color-secundario: #b71c1c;
+      --color-fondo: #fff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--color-principal), var(--color-secundario));
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .section {
+      padding: 3rem 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .section img {
+      flex: 1;
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .section .text {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .section .text h2 {
+      color: var(--color-principal);
+      margin-bottom: 1rem;
+    }
+
+    .section .text p {
+      line-height: 1.6;
+    }
+
+    /* Servicios */
+    .servicios {
+      background: #fff;
+      padding: 3rem 1.5rem;
+    }
+
+    .servicios h2 {
+      text-align: center;
+      color: var(--color-principal);
+      margin-bottom: 2rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #f8f9fa;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card i {
+      font-size: 2.5rem;
+      color: var(--color-principal);
+      margin-bottom: 1rem;
+    }
+
+    /* Equipo */
+    .equipo {
+      background: #fff;
+      padding: 3rem 1.5rem;
+    }
+
+    .equipo h2 {
+      text-align: center;
+      color: var(--color-principal);
+      margin-bottom: 2rem;
+    }
+
+    .miembros {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .miembro {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .miembro:hover {
+      transform: scale(1.05);
+    }
+
+    .miembro img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid var(--color-principal);
+    }
+
+    .miembro h3 {
+      margin: 0.5rem 0;
+    }
+
+    /* Animaciones */
+    .hidden {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    .visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .section img {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Sobre Nosotros</h1>
+    <p>Conoce la historia, misión y servicios de <strong>Hiperllantas La Ola</strong></p>
+  </header>
+
+  <!-- Historia -->
+  <section class="section hidden">
+    <img src="https://images.unsplash.com/photo-1604062339551-5a4f9d46f6d3" alt="Nuestra Historia">
+    <div class="text">
+      <h2>Nuestra Historia</h2>
+      <p>Hiperllantas La Ola nació con el compromiso de ofrecer llantas de la más alta calidad, con precios justos y un servicio al cliente excepcional. Con años de experiencia en el sector automotriz, hemos logrado posicionarnos como una empresa confiable y cercana a nuestros clientes.</p>
+    </div>
+  </section>
+
+  <!-- Misión y visión -->
+  <section class="section hidden">
+    <div class="text">
+      <h2>Misión & Visión</h2>
+      <p><strong>Misión:</strong> Brindar soluciones de movilidad seguras y eficientes mediante la venta de llantas de calidad y asesoría personalizada.</p>
+      <p><strong>Visión:</strong> Ser líderes en el mercado automotriz a nivel nacional, reconocidos por nuestro profesionalismo, innovación y compromiso con la satisfacción del cliente.</p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d" alt="Misión y Visión">
+  </section>
+
+  <!-- Servicios -->
+  <section class="servicios hidden">
+    <h2>Nuestros Servicios</h2>
+    <div class="cards">
+      <div class="card">
+        <i class="fa-solid fa-car"></i>
+        <h3>Venta de Llantas</h3>
+        <p>Amplia gama de llantas para autos, camionetas y vehículos de carga.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-wrench"></i>
+        <h3>Instalación y Balanceo</h3>
+        <p>Servicios profesionales de montaje, alineación y balanceo de llantas.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h3>Garantía Total</h3>
+        <p>Respaldamos cada producto con garantía para tu seguridad y confianza.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipo -->
+  <section class="equipo hidden">
+    <h2>Nuestro Equipo</h2>
+    <div class="miembros">
+      <div class="miembro">
+        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Gerente">
+        <h3>Juan Pérez</h3>
+        <p>Gerente General</p>
+      </div>
+      <div class="miembro">
+        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Atención al cliente">
+        <h3>María López</h3>
+        <p>Atención al Cliente</p>
+      </div>
+      <div class="miembro">
+        <img src="https://randomuser.me/api/portraits/men/60.jpg" alt="Técnico">
+        <h3>Carlos Ramírez</h3>
+        <p>Técnico Especialista</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Animación con IntersectionObserver
+    document.addEventListener("DOMContentLoaded", () => {
+      const secciones = document.querySelectorAll(".hidden");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      secciones.forEach(sec => observer.observe(sec));
+    });
+  </script>
+
+</body>
+</html>

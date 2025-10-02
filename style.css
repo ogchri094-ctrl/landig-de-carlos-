@@ -1,0 +1,183 @@
+/* ===== ESTILOS GENERALES ===== */
+body {
+  margin: 0;
+  font-family: "Bungee", sans-serif;
+  background: #f4f4f9;
+  color: #222;
+}
+
+/* ===== HEADER ===== */
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: white;
+  border-bottom: 2px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.logo h1 {
+  font-size: 26px;
+  color: red;
+}
+
+.logo span {
+  color: black;
+}
+
+.menu a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: rgb(255, 0, 0);
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.menu a:hover {
+  color: red;
+}
+
+.acciones {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.acciones a {
+  font-size: 20px;
+  color: black;
+  position: relative;
+  transition: 0.3s;
+}
+
+.acciones a:hover {
+  color: red;
+}
+
+/* Badge del carrito */
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* ===== HERO ===== */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(120deg, red, black);
+  color: white;
+}
+
+.hero h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* ===== COTIZADOR ===== */
+.cotizador {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.cotizador h2 {
+  margin-bottom: 20px;
+  color: red;
+  font-size: 22px;
+}
+
+.cotizador label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.cotizador input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.cotizador button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cotizador button:hover {
+  background: black;
+}
+
+.resultado {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+.seccion5 {
+  display: flex;
+  justify-content: space-between;
+  text-align: center; 
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+
+  font-size: 13px;
+}
+
+.seccion6 h1 {
+  padding: 20px;
+  font-style: italic;
+  font-weight: bold;
+   font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.seccion5 a {
+  color: rgb(255, 0, 0);
+  text-decoration: none;
+  padding: 6px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 13px;
+  transition: 0.3s ease;
+}
+
+.seccion5 a:hover {
+  color: blue;
+  transform: scale(1.05);
+} 

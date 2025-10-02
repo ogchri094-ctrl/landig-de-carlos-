@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hiperllantas La Ola</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-principal: #ff0808;
+      --color-secundario: #222;
+      --color-fondo: #f8f9fa;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--color-fondo);
+      color: var(--color-secundario);
+      overflow-x: hidden;
+    }
+
+    /* ---------- HEADER ---------- */
+    .encabezado {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: #fff;
+      border-bottom: 2px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .encabezado h1 {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 1.5rem;
+      margin: 0;
+      color: var(--color-secundario);
+    }
+
+    .encabezado h1 span {
+      color: var(--color-principal);
+    }
+
+    .menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: var(--color-secundario);
+      font-weight: bold;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .menu a::after {
+      content: '';
+      width: 0%;
+      height: 2px;
+      background: var(--color-principal);
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s;
+    }
+
+    .menu a:hover::after {
+      width: 100%;
+    }
+
+    .acciones {
+      display: flex;
+      gap: 15px;
+    }
+
+    .acciones i {
+      font-size: 1.2rem;
+      color: var(--color-secundario);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .acciones i:hover {
+      color: var(--color-principal);
+      transform: scale(1.2);
+    }
+
+    .badge {
+      background: var(--color-principal);
+      color: #fff;
+      font-size: 0.8rem;
+      padding: 2px 6px;
+      border-radius: 50%;
+      position: relative;
+      top: -10px;
+      left: -8px;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      background: linear-gradient(-45deg, #a80000, #ac2200, #007bff, #0056b3);
+      background-size: 400% 400%;
+      animation: gradientBG 8s ease infinite;
+      color: #fff;
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .hero h2 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      font-family: "Archivo Black", sans-serif;
+      letter-spacing: 1px;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      animation: fadeInUp 1.5s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---------- PRODUCTOS ---------- */
+    .seccion6 h1 {
+      text-align: center;
+      margin: 50px 0 20px;
+      font-size: 2rem;
+      color: var(--color-principal);
+      animation: fadeIn 1.2s ease;
+    }
+
+    .seccion5 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .llantas1 {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .llantas1:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .llantas1 img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .llantas1 h3 {
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    .llantas1 a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: var(--color-principal);
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+      font-weight: bold;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .llantas1 a::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: rgba(255,255,255,0.4);
+      transition: 0.4s;
+    }
+
+    .llantas1 a:hover::before {
+      left: 100%;
+    }
+
+    /* ---------- TESTIMONIOS ---------- */
+    .testimonios {
+      padding: 60px 20px;
+      background: #fff;
+    }
+
+    .testimonios h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      font-family: "Archivo Black", sans-serif;
+    }
+
+    .contenedor-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card-testimonio {
+      background: var(--color-fondo);
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .card-testimonio:hover {
+      transform: scale(1.05);
+    }
+
+    .card-testimonio img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid var(--color-principal);
+    }
+
+    .card-testimonio h3 {
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    .card-testimonio p.rol {
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    .estrellas {
+      color: #f8b400;
+      margin-bottom: 15px;
+    }
+
+    /* ---------- COTIZADOR ---------- */
+    .cotizador {
+      background: var(--color-principal);
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .cotizador h2 {
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      font-family: "Archivo Black", sans-serif;
+    }
+
+    .cotizador input {
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      width: 100%;
+      max-width: 250px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .cotizador input:focus {
+      box-shadow: 0 0 10px rgba(255,255,255,0.6);
+    }
+
+    .cotizador button {
+      display: block;
+      margin: 15px auto 0;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 10px;
+      background: #fff;
+      color: var(--color-principal);
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cotizador button:hover {
+      background: #ddd;
+    }
+
+    .resultado {
+      margin-top: 15px;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .menu { display: none; }
+      .hero h2 { font-size: 1.6rem; }
+    }
+
+    @media (max-width: 480px) {
+      .encabezado { flex-direction: column; text-align: center; }
+      .hero { padding: 80px 20px; }
+      .seccion6 h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="encabezado">
+    <div class="logo">
+      <h1>Hiperllantas <span>.COM</span></h1>
+    </div>
+
+    <nav class="menu">
+      <a href="sucursales.html">Sucursales</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contactanos.html">Contáctanos</a>
+      <a href="mas.html">Más</a>
+    </nav>
+
+    <div class="acciones">
+      <a href="registro.html"><i class="fa-solid fa-user"></i></a>
+      <a href="#"><i class="fa-solid fa-cart-shopping"></i><span class="badge">0</span></a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h2>Encuentra la llanta perfecta para tu auto 🚗</h2>
+    <p>Cotiza fácil, rápido y al mejor precio.</p>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section class="seccion6">
+    <h1>LAS LLANTAS MÁS VENDIDAS</h1>
+  </section>
+
+  <section class="seccion5">
+    <div class="llantas1">
+      <img src="llants.jpg" alt="">
+      <h3>AUTOS</h3>
+      <p>LLANTA FIREHAWK 175/60/14</p>
+      <a href="#">COTIZAR AHORA</a>
+    </div>
+
+    <div class="llantas1">
+      <img src="llants.jpg" alt="">
+      <h3>AUTOS</h3>
+      <p>LLANTA FIREHAWK 175/60/14</p>
+      <a href="#">COTIZAR AHORA</a>
+    </div>
+
+    <div class="llantas1">
+      <img src="llants.jpg" alt="">
+      <h3>AUTOS</h3>
+      <p>LLANTA FIREHAWK 175/60/14</p>
+      <a href="#">COTIZAR AHORA</a>
+    </div>
+
+    <div class="llantas1">
+      <img src="llants.jpg" alt="">
+      <h3>AUTOS</h3>
+      <p>LLANTA FIREHAWK 175/60/14</p>
+      <a href="#">COTIZAR AHORA</a>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="testimonios">
+    <h2>Lo que opinan nuestros clientes</h2>
+    <div class="contenedor-cards">
+      <div class="card-testimonio">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente 1">
+        <h3>María González</h3>
+        <p class="rol">Empresaria</p>
+        <div class="estrellas">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star-half-stroke"></i>
+        </div>
+        <p>"El servicio fue excelente, la atención personalizada y el proceso súper rápido. Muy recomendado."</p>
+      </div>
+      <div class="card-testimonio">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente 2">
+        <h3>Carlos Ramírez</h3>
+        <p class="rol">Ingeniero</p>
+        <div class="estrellas">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <p>"Muy profesionales, los recomiendo al 100%. Sin duda volveré a contratar sus servicios."</p>
+      </div>
+      <div class="card-testimonio">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Cliente 3">
+        <h3>Laura Méndez</h3>
+        <p class="rol">Diseñadora</p>
+        <div class="estrellas">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </div>
+        <p>"Me encantó la atención y la calidad. Todo fue más de lo que esperaba. ¡Gracias por todo!"</p>
+      </div>
+    </div>
+  </section>
+
+ <!-- COTIZADOR -->
+<section class="cotizador">
+  <h2>Cotiza tu Llanta</h2>
+
+  <label for="ancho">Ancho (mm)</label>
+  <input type="number" id="ancho" placeholder="Ej. 205">
+
+  <label for="alto">Alto (%)</label>
+  <input type="number" id="alto" placeholder="Ej. 55">
+
+  <label for="rin">Rin (pulgadas)</label>
+  <input type="number" id="rin" placeholder="Ej. 16">
+
+  <label for="marca">Marca de la llanta</label>
+  <input type="text" id="marca" placeholder="Ej. Michelin, Firestone">
+
+  <button onclick="cotizar()">Cotizar Ahora</button>
+  <div class="resultado" id="resultado"></div>
+</section>
+
+<script>
+  function cotizar() {
+    let ancho = document.getElementById("ancho").value;
+    let alto = document.getElementById("alto").value;
+    let rin = document.getElementById("rin").value;
+    let marca = document.getElementById("marca").value;
+
+    if (ancho && alto && rin && marca) {
+      let medida = ancho + "/" + alto + " R" + rin;
+      let mensaje = `Hola, me gustaría cotizar una llanta con las siguientes características:\n\n📏 Medida: ${medida}\n🏷️ Marca: ${marca}\n\n¿Podrían darme precio y disponibilidad?`;
+
+      // Número de WhatsApp (ejemplo México +52)
+      let telefono = "521234567890"; // <-- aquí pon tu número de WhatsApp
+      let url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+
+      window.open(url, "_blank");
+    } else {
+      document.getElementById("resultado").innerText =
+        "⚠️ Por favor ingresa todos los valores.";
+    }
+  }
+</script>
+
+  <!-- SCRIPT -->
+  <script>
+    // Animación de aparición
+    document.addEventListener("DOMContentLoaded", () => {
+      const secciones = document.querySelectorAll("section");
+      const opciones = { threshold: 0.2 };
+
+      const aparecer = (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      };
+
+      const observador = new IntersectionObserver(aparecer, opciones);
+      secciones.forEach(sec => observador.observe(sec));
+    });
+
+    
+  </script>
+
+</body>
+</html>
